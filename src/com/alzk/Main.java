@@ -1,33 +1,166 @@
 package com.alzk;
 
-import javax.xml.stream.XMLInputFactory;
+//public class Main {
+//
+//    private static final int simCardSize4G = 128; // 假設 5G Sim Card 大小為 128;
+//    private static final int simCardSize5G = 64; // 肉眼觀測 4G Sim Card 大小為 5G Sim Card 的一半;
+//    private static final int simCardSize = 16; // 他媽還是用肉眼觀測，4G Sim Card 大小為 16 (4G Sim Card 的四分之一);
+//    private static final int simCardSize2 = simCardSize; // 他媽再用肉眼觀測，4G Sim Card 跟 5G Sim Card 一樣大;
+//    public static final byte simCard4GPlasticArea = simCardSize4G - simCardSize; // 4G 卡片的塑膠區域
+//    public static final byte simCard5GPlasticArea = simCardSize5G - simCardSize; // 5G 卡片的塑膠區域
+//
+//    public static void main(String[] args) {
+//        System.out.println("結論");
+//        System.out.println("4G Sim Card - 總大小：" + simCardSize4G + ", Sim Card 區域為：" + simCardSize + ", 塑膠區域為:" + simCard4GPlasticArea);
+//        System.out.println("5G Sim Card - 總大小：" + simCardSize5G + ", Sim Card 區域為：" + simCardSize + ", 塑膠區域為:" + simCard5GPlasticArea);
+//        if (simCard5GPlasticArea < simCard4GPlasticArea) { // 比較卡片的塑膠區域
+//            System.out.println("幹 Sim Card 本身沒有變小，是 Sim Card 沒拔下前連著的那塊板子變小！象徵 2G 到 5G 演變進程，也更加簡約環保。");
+//        } else if (simCardSize < simCardSize2) { // 比較 Sim Card 大小
+//            System.out.println("你很奇怪，比較 Sim Card 幹嘛？");
+//        } else {
+//            System.out.println("不能質疑 Jammie，因為他五歲開始寫程式。");
+//        }
+//    }
+//}
+
+
+import java.util.Scanner;
 
 public class Main {
 
-    private static final String INVALID_VALUE_MESSAGE = "Invalid value";
-    private static String INVALID_VALUE_MESSAGE2 = "Invalid value";
-
     public static void main(String[] args) {
-        System.out.println(getDurationString(65,45));
+        Wall a = new Wall(-1.25, -1.25);
+        System.out.println(a.getArea());
     }
 
-    public static String getDurationString(int seconds) {
-        if (seconds < 0) {
-            return INVALID_VALUE_MESSAGE;
-        }
-        int remainMinutes = seconds / 60;
-        int remainSeconds = seconds % 60;
-        return getDurationString(remainMinutes, remainSeconds);
-    }
+//    public static void main(String[] args) {
+//        int count = 0;
+//        int value = 0;
+//        Scanner scanner = new Scanner(System.in);
+//        while (true) {
+//            System.out.println("Enter number #" + (count + 1));
+//            if (scanner.hasNextInt()) {
+//                value = scanner.nextInt();
+//                count++;
+//                value += count;
+//                if (count == 5) {
+//                    scanner.close();
+//                    break;
+//                }
+//            } else {
+//                System.out.println("You enter the wrong type value ! Try again.");
+//            }
+//            scanner.nextLine();
+//        }
+//        System.out.println("Total: " + value);
+////        scanner.next();
+////        System.out.println("Enter the fking number");
+////        if (scanner.hasNextInt()) {
+////            System.out.println("You enter: " + scanner.nextLine());
+////            scanner.close();
+////        } else {
+////            scanner.nextLine();
+////            System.out.println("Fk ! Type again !");
+////        }
+//        //        System.out.println("Enter your name: ");
+//        //        String name = scanner.nextLine();
+//        //        System.out.println(name);
+//
+//    }
 
-    public static String getDurationString(int minutes, int seconds) {
-        if (minutes < 0 || (seconds < 0 || seconds > 59)) {
-            return INVALID_VALUE_MESSAGE;
-        }
-        int remainMinutes = minutes % 60;
-        int hours = minutes / 60;
-        return hours + "h " + remainMinutes + "m " + seconds + "s";
-    }
+    //    public static boolean isEvenNumber(int a) {
+    //        return a % 2 == 0;
+    //    }
+
+    //    public static void main(String[] args) {
+    //
+    //        int number = 4;
+    //        int count = 0;
+    //        int totalValue = 0;
+    //
+    //        while (number <= 20 && count != 5) {
+    //            number++;
+    //            if (!isEvenNumber(number)) {
+    //                continue;
+    //            }
+    //            count++;
+    //            totalValue += number;
+    //        }
+    //        System.out.println(totalValue + count);
+    //
+    //        //        System.out.println(isEvenNumber(6));
+    //
+    //        //        int count = 1;
+    //        //        do {
+    //        //            System.out.println("幹");
+    //        //            count++;
+    //        //        } while (count != 6);
+    //
+    //        //        while (count != 6) {
+    //        //            System.out.println(count);
+    //        //            count += 1;
+    //        //        }
+    //    }
+
+    //    public static void main(String[] args) {
+    //        int findCounts = 0;
+    //        int findValue = 0;
+    //        for (int i = 1; i <= 1000; i++) {
+    //            if (i % 3 == 0 && i % 5 ==0) {
+    //                findCounts += 1;
+    //                findValue += i;
+    //                System.out.println(i);
+    //                if (findCounts == 5) {
+    //                    break;
+    //                }
+    //            }
+    //        }
+    //        System.out.println("幹: " + findValue);
+    //    }
+
+    //    public static void main(String[] args) {
+    //        SimCard a = new SimCard(SimCard.CardType.card4G, 128);
+    //        SimCard b = new SimCard(SimCard.CardType.card5G, 64);
+    //        System.out.println(a.type + " 塑膠區域大小為: " + a.getCardPlasticSize());
+    //        System.out.println(b.type + " 塑膠區域大小為: " + b.getCardPlasticSize());
+    //
+    //    }
+
+    //    public static void main(String[] args) {
+    //        int switchValue = 1;
+    //        switch (switchValue) {
+    //            case 1:
+    //                System.out.println("Value was 1");
+    //                break;
+    //            case 2:
+    //                System.out.println("Value was 2");
+    //                break;
+    //            case 4: case 5: case 6:
+    //                System.out.println("567");
+    //                break;
+    //            default:
+    //                System.out.println("Strange");
+    //                break;
+    //        }
+    //    }
+
+    //    public static String getDurationString(int seconds) {
+    //        if (seconds < 0) {
+    //            return INVALID_VALUE_MESSAGE;
+    //        }
+    //        int remainMinutes = seconds / 60;
+    //        int remainSeconds = seconds % 60;
+    //        return getDurationString(remainMinutes, remainSeconds);
+    //    }
+    //
+    //    public static String getDurationString(int minutes, int seconds) {
+    //        if (minutes < 0 || (seconds < 0 || seconds > 59)) {
+    //            return INVALID_VALUE_MESSAGE;
+    //        }
+    //        int remainMinutes = minutes % 60;
+    //        int hours = minutes / 60;
+    //        return hours + "h " + remainMinutes + "m " + seconds + "s";
+    //    }
 
     //    public static double calcFeetAndInchesToCentimeters(double feet, double inches) {
     //        if (feet < 0 || (inches < 0 || inches > 12)) { return -1; }
